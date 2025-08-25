@@ -77,6 +77,33 @@
       color: #B0E0E6;
       transform: translateY(-3px);
     }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.perfil-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header-text h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.header-text p {
+  font-size: 1.1em;
+}
+
+    
     footer {
       text-align: center;
       padding: 6px;
@@ -87,7 +114,15 @@
     @media (max-width: 600px) {
       section { margin: 20px; padding: 20px; }
       header { padding: 30px 10px; }
-    }
+       .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .perfil-img {
+    width: 100px;
+    height: 100px;
+  }
+ }
 
     /* Modal */
     .modal {
@@ -140,10 +175,15 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Wanderson Bianchini</h1>
-    <p>Analista de Suporte | Sistemas de Comércio Exterior</p>
-  </header>
+<header>
+  <div class="header-container">
+    <img src="perfil.jpg" alt="Foto de Wanderson Bianchini" class="perfil-img">
+    <div class="header-text">
+      <h1>Wanderson Bianchini</h1>
+      <p>Analista de Suporte | Sistemas de Comércio Exterior</p>
+    </div>
+  </div>
+</header>
 
   <section>
     <h2>Sobre Mim</h2>
