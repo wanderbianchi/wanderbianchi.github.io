@@ -104,6 +104,7 @@
       to { opacity: 1; }
     }
     .modal-conteudo {
+      position: relative;
       background: white;
       padding: 30px;
       border-radius: 10px;
@@ -114,23 +115,26 @@
       transform: scale(0.9);
       opacity: 0;
       animation: zoomIn 0.4s ease forwards;
-      <button onclick="fecharModal()" style="
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  color: #7f8c8d;
-  cursor: pointer;
-">×</button>
-
     }
     @keyframes zoomIn {
       to {
         transform: scale(1);
         opacity: 1;
       }
+    }
+    .fechar-modal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      color: #7f8c8d;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .fechar-modal:hover {
+      color: #e74c3c;
     }
   </style>
 </head>
@@ -161,10 +165,10 @@
     <!-- Modal -->
     <div id="modalCurriculo" class="modal">
       <div class="modal-conteudo">
+        <button onclick="fecharModal()" class="fechar-modal" title="Fechar modal">×</button>
         <h3>Como você deseja visualizar o currículo?</h3>
         <a href="curriculo.html" class="button" target="_blank">Abrir Página HTML</a>
-        <a href="Wanderson Bianchini dos Santos.pdf" class="button" download>Baixar PDF</a>
-        <button onclick="fecharModal()" class="button" style="background-color: #7f8c8d;">Fechar</button>
+        <a href="curriculo-wanderson.pdf" class="button" download>Baixar PDF</a>
       </div>
     </div>
 
