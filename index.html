@@ -1,3 +1,15 @@
+Claro, Wanderson! Aqui está seu arquivo `index.html` totalmente atualizado com todas as melhorias que você solicitou:
+
+- ✅ Modal interativo ao clicar em “Visualizar Currículo”
+- ✅ Animações suaves de entrada
+- ✅ Estilo consistente com sua página
+- ✅ Opções para abrir o currículo em HTML ou baixar o PDF
+
+---
+
+### 🧾 `index.html` atualizado
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -87,6 +99,40 @@
       section { margin: 20px; padding: 20px; }
       header { padding: 30px 10px; }
     }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(3px);
+      animation: fadeModal 0.4s ease forwards;
+    }
+    @keyframes fadeModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-conteudo {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 100px auto;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: scale(0.9);
+      opacity: 0;
+      animation: zoomIn 0.4s ease forwards;
+    }
+    @keyframes zoomIn {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -97,9 +143,8 @@
 
   <section>
     <h2>Sobre Mim</h2>
-    <p> </p>
     <p>Sou analista de suporte com experiência em sistemas voltados para comércio exterior. Atuo na resolução de problemas técnicos, suporte a usuários, testes de sistemas e documentação funcional.</p>
-<br>
+
     <h2>Habilidades</h2>
     <ul>
       <li>Suporte técnico a sistemas ERP e de comércio exterior</li>
@@ -108,15 +153,23 @@
       <li>Documentação técnica e atendimento ao cliente</li>
       <li>Início dos estudos em PL/SQL para desenvolvimento de soluções avançadas</li>
     </ul>
-<br>
+
     <h2>Currículo</h2>
-    <br>
     <p>
-      <a href="curriculo.html" target="_blank" class="button">Visualizar Currículo</a>
+      <a href="#" class="button" onclick="abrirModal()">Visualizar Currículo</a>
     </p>
-<br>
+
+    <!-- Modal -->
+    <div id="modalCurriculo" class="modal">
+      <div class="modal-conteudo">
+        <h3>Como você deseja visualizar o currículo?</h3>
+        <a href="curriculo.html" class="button" target="_blank">Abrir Página HTML</a>
+        <a href="curriculo-wanderson.pdf" class="button" download>Baixar PDF</a>
+        <button onclick="fecharModal()" class="button" style="background-color: #7f8c8d;">Fechar</button>
+      </div>
+    </div>
+
     <h2>Projetos em Desenvolvimento</h2>
-    <br>
     <p>Em breve, estarei publicando projetos em PL/SQL voltados para automação de processos e análise de dados em sistemas de comércio exterior.</p>
 
     <div class="social-icons">
@@ -128,5 +181,33 @@
   <footer>
     <p>© 2025 Wanderson Bianchini</p>
   </footer>
+
+  <script>
+    function abrirModal() {
+      const modal = document.getElementById("modalCurriculo");
+      modal.style.display = "block";
+
+      const conteudo = modal.querySelector(".modal-conteudo");
+      conteudo.style.animation = "none";
+      void conteudo.offsetWidth;
+      conteudo.style.animation = "zoomIn 0.4s ease forwards";
+    }
+
+    function fecharModal() {
+      document.getElementById("modalCurriculo").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalCurriculo");
+      if (event.target === modal) {
+        fecharModal();
+      }
+    }
+  </script>
 </body>
 </html>
+```
+
+---
+
+Se quiser que o modal tenha ícones, uma borda colorida ou até um som discreto ao abrir, posso adicionar esses detalhes também. Quer que ele combine com o estilo dos seus botões ou tenha um fundo com gradiente?
