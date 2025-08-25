@@ -106,7 +106,7 @@
     .modal-conteudo {
       position: relative;
       background: white;
-       padding: 30px 30px 28px 30px; 
+      padding: 30px 30px 20px 30px;
       border-radius: 10px;
       max-width: 400px;
       margin: 100px auto;
@@ -136,6 +136,37 @@
     .fechar-modal:hover {
       color: #e74c3c;
     }
+    .modal-titulo {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .modal-botoes {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      color: white;
+    }
+    .visualizar {
+      background-color: #007bff;
+    }
+    .baixar {
+      background-color: #28a745;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body>
@@ -148,9 +179,8 @@
     <h2>Sobre Mim</h2>
     <div style="margin-top: 20px;"></div>
     <p>Sou analista de suporte com experiência em sistemas voltados para comércio exterior. Atuo na resolução de problemas técnicos, suporte a usuários, testes de sistemas e documentação funcional.</p>
-    <div style="margin-top: 20px;"></div>
+
     <h2>Habilidades</h2>
-    <div style="margin-top: 20px;"></div>
     <ul>
       <li>Suporte técnico a sistemas ERP e de comércio exterior</li>
       <li>Conhecimento em processos de importação/exportação</li>
@@ -158,7 +188,7 @@
       <li>Documentação técnica e atendimento ao cliente</li>
       <li>Início dos estudos em PL/SQL para desenvolvimento de soluções avançadas</li>
     </ul>
-    <div style="margin-top: 20px;"></div>
+
     <h2>Currículo</h2>
     <p>
       <a href="#" class="button" onclick="abrirModal()">Visualizar Currículo</a>
@@ -168,15 +198,15 @@
     <div id="modalCurriculo" class="modal">
       <div class="modal-conteudo">
         <button onclick="fecharModal()" class="fechar-modal" title="Fechar modal">×</button>
-        <h3>Como você deseja visualizar o currículo?</h3>
-        <a href="curriculo.html" class="button" target="_blank" style="margin-bottom: 15px; display: inline-block;">Visualizar em tela</a>
-        <a href="Wanderson Bianchini dos Santos.pdf" class="button" download>Baixar PDF</a>
-
+        <h3 class="modal-titulo">Como você deseja visualizar o currículo?</h3>
+        <div class="modal-botoes">
+          <a href="Wanderson Bianchini dos Santos.pdf" target="_blank" class="btn visualizar">Visualizar em tela</a>
+          <a href="Wanderson Bianchini dos Santos.pdf" download class="btn baixar">Baixar PDF</a>
+        </div>
       </div>
     </div>
-    <div style="margin-top: 20px;"></div>
+
     <h2>Projetos em Desenvolvimento</h2>
-    <div style="margin-top: 20px;"></div>
     <p>Em breve, estarei publicando projetos em PL/SQL voltados para automação de processos e análise de dados em sistemas de comércio exterior.</p>
 
     <div class="social-icons">
@@ -205,11 +235,4 @@
     }
 
     window.onclick = function(event) {
-      const modal = document.getElementById("modalCurriculo");
-      if (event.target === modal) {
-        fecharModal();
-      }
-    }
-  </script>
-</body>
-</html>
+      const modal = document.getElement
