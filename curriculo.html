@@ -25,6 +25,33 @@
       text-align: center;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
+    .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.perfil-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header-text h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.header-text p {
+  font-size: 1.1em;
+}
+
     section {
       max-width: 900px;
       margin: 40px auto;
@@ -59,16 +86,29 @@
     @media (max-width: 600px) {
       section { margin: 20px; padding: 20px; }
       header { padding: 30px 10px; }
+        .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .perfil-img {
+    width: 100px;
+    height: 100px;
+  }
+
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Wanderson Bianchini</h1>
-    <p>Analista de Suporte | Sistemas de Comércio Exterior</p>
-    <p>Americana/SP • (19) 99502-5610 • <a href="mailto:wander.bianchi@gmail.com" style="color:#ecf0f1;">wander.bianchi@gmail.com</a></p>
-    <p><a href="https://www.linkedin.com/in/wanderbianchi" target="_blank" style="color:#ecf0f1;">LinkedIn</a></p>
-  </header>
+ <header>
+  <div class="header-container">
+    <img src="Perfil.jpg" alt="Foto de Wanderson Bianchini" class="perfil-img">
+    <div class="header-text">
+      <h1>Wanderson Bianchini</h1>
+      <p>Analista de Suporte | Sistemas de Comércio Exterior</p>
+	   <p>Americana/SP • (19) 99502-5610 • <a href="mailto:wander.bianchi@gmail.com" style="color:#ecf0f1;">wander.bianchi@gmail.com</a> | <a href="https://www.linkedin.com/in/wanderbianchi" target="_blank" style="color:#ecf0f1;">LinkedIn</a> </p>
+    </div>
+  </div>
+</header>
 
   <section>
     <h2>Resumo das Qualificações</h2>
