@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Wanderson Bianchi - Portfólio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -11,6 +12,11 @@
       background-color: #ecf0f1;
       color: #2c3e50;
       line-height: 1.6;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     header {
       background: linear-gradient(135deg, #2c3e50, #34495e);
@@ -52,10 +58,24 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
     a.button:hover {
       background-color: #d4ac0d;
+      transform: scale(1.05);
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #f1c40f;
+      transform: translateY(-3px);
     }
     footer {
       text-align: center;
@@ -93,6 +113,11 @@
 
     <h2>Projetos em Desenvolvimento</h2>
     <p>Em breve, estarei publicando projetos em PL/SQL voltados para automação de processos e análise de dados em sistemas de comércio exterior.</p>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/wanderbianchi" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/wanderbianchi" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+    </div>
   </section>
 
   <footer>
